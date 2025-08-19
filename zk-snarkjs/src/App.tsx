@@ -20,7 +20,6 @@ function App() {
     console.log("Calculating Proof");
     const a = 1;
     const b = 15;
-    const pubs = 11483229616558506910642014146855464484105997386704495697571235910752681272591;
     const { proof, publicSignals } = await snarkjs.groth16.fullProve(
       { a: a, b: b },
       "circuit.wasm",
@@ -36,7 +35,7 @@ function App() {
       return res.json();
     });
 
-    const res = await snarkjs.groth16.verify(vkey, pubs, proof);
+    const res = await snarkjs.groth16.verify(vkey, publicSignals, proof);
 
     if (resultComponent) {
       resultComponent.innerHTML = res;
