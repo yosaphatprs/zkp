@@ -1,0 +1,13 @@
+{
+  "root": "1101021",
+  "threshold": "18",
+  "claimVaccineStatus": "1",
+  "age": "25",
+  "vaccineStatus": "1",
+  "saltAge": "1291201",
+  "saltVaccine": "1012912",
+  "pathElementsAge": ["0", "0", "0", "0"],
+  "pathElementsVaccine": ["0", "0", "0", "0"],
+  "pathIndicesAge": ["0", "0", "0", "0"],
+  "pathIndicesVaccine": ["0", "0", "0", "0"]
+}
