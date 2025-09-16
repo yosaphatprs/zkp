@@ -26,17 +26,31 @@ template MerkleProof(nLevels) {
     signal levelHashes[nLevels + 1];
     levelHashes[0] <== leaf;
 
+    signal s1[nLevels];
+    signal s2[nLevels];
+    signal left[nLevels];
+    
+    signal s3[nLevels];
+    signal s4[nLevels];
+    signal right[nLevels];
+
     for (var i = 0; i < nLevels; i++) {
+        
+        s1[i] <== (1 - pathIndices[i]) * levelHashes[i];
+        s2[i] <== pathIndices[i] * pathElements[i];    
+        left[i] <== s1[i] + s2[i];
+
+        s3[i] <== pathIndices[i] * levelHashes[i];
+        s4[i] <== (1 - pathIndices[i]) * pathElements[i];
+        right[i] <== s3[i] + s4[i];
+        
         hashers[i] = Poseidon(2);
-        
-        signal left <== (1 - pathIndices[i]) * levelHashes[i] + pathIndices[i] * pathElements[i];
-        signal right <== pathIndices[i] * levelHashes[i] + (1 - pathIndices[i]) * pathElements[i];
-        
-        hashers[i].inputs[0] <== left;
-        hashers[i].inputs[1] <== right;
+        hashers[i].inputs[0] <== left[i];
+        hashers[i].inputs[1] <== right[i];
         
         levelHashes[i+1] <== hashers[i].out;
     }
+
     root <== levelHashes[nLevels];
 }
 
