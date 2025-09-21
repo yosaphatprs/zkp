@@ -20,3 +20,12 @@
 8. Proof dan public signals dikirim ke smart contract untuk divalidasi atau divalidasi melalui website(?).
 9. Jika valid, maka user dianggap lolos validasi umur dan vaksin.
 10. Jika tidak valid, maka user dianggap tidak lolos validasi umur dan vaksin.
+
+# Notable Folder
+
+- gnark-medrec: implementasi generate dan verify proof **gnark** untuk validasi umur dan vaksin
+- snarkjs-medrec: implementasi generate dan verify proof **snarkjs** untuk validasi umur dan vaksin
+- zokrates-medrec: implementasi generate dan verify proof **zokrates** untuk validasi umur dan vaksin
+- benchmark: berisi script untuk menjalankan benchmark
+
+(Sementara tidak menggunakan merkle, karena dalam gnark tidak terdapat hashing poseidon yang dapat digunakan langsung dalam library merkle tree. Selain itu jika menggunakan algoritma merkle tree manual, versi poseidon dalam gnark tidak sama dengan poseidon di snarkjs sehingga hash yang dihasilkan berbeda. Kemudian dokumentasi merkle tree dan hash poseidon dalam gnark sangatlah minim. Dokumentasi keseluruhan dalam gnark lebih minim dibandingkan snarkjs dan zokrates sehingga susah untuk mengimplementasikan dan melakukan debugging.)
