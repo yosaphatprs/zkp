@@ -16,4 +16,4 @@ hyperfine --runs 100 --warmup 5 "snarkjs groth16 fullprove ../circuit-snarkjs-me
 
 # Verify Proof
 echo "# Verify Proof #"
-snarkjs groth16 verify verification_key.json public.json proof.json
+hyperfine --runs 100 --warmup 5 "snarkjs groth16 verify verification_key.json public.json proof.json" --export-json verify-proof.json
