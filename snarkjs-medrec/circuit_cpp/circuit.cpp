@@ -35,7 +35,7 @@ uint get_number_of_components() {return 5;}
 
 uint get_size_of_input_hashmap() {return 256;}
 
-uint get_size_of_witness() {return 29;}
+uint get_size_of_witness() {return 28;}
 
 uint get_size_of_constants() {return 5;}
 
@@ -472,6 +472,13 @@ cmp_index_ref_load = 1;
 Fr_mul(&expaux[0],&ctx->signalValues[ctx->componentMemory[mySubcomponents[0]].signalStart + 0],&ctx->signalValues[ctx->componentMemory[mySubcomponents[1]].signalStart + 0]); // line circom 21
 // end load src
 Fr_copy(aux_dest,&expaux[0]);
+}
+{
+{{
+Fr_eq(&expaux[0],&signalValues[mySignalStart + 4],&circuitConstants[2]); // line circom 22
+}}
+if (!Fr_isTrue(&expaux[0])) std::cout << "Failed assert in template/function " << myTemplateName << " line 22. " <<  "Followed trace of components: " << ctx->getTrace(myId) << std::endl;
+assert(Fr_isTrue(&expaux[0]));
 }
 for (uint i = 0; i < 2; i++){
 uint index_subc = ctx->componentMemory[ctx_index].subcomponents[i];

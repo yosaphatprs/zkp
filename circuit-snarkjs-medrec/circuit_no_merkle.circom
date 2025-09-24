@@ -19,6 +19,7 @@ template VerifyPatient() {
 
     signal allChecksValid;
     allChecksValid <== ageCheck.out * vaccineCheck.out;
+    allChecksValid === 1;
 }
 
 component main {public [threshold, claimVaccineStatus]} = VerifyPatient();
