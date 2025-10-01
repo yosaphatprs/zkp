@@ -1,0 +1,15 @@
+{
+  "name": "snarkjs-explore",
+  "version": "1.0.0",
+  "description": "Project to explore snarkJS implementation",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "snarkjs": "^0.7.5"
+  }
+}
