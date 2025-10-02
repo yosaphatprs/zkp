@@ -1,0 +1,5 @@
+def main(private field age, private field vaccineStatus,
+    field ageThreshold, field claimVaccineStatus) {
+    assert(age >= ageThreshold);
+    assert(vaccineStatus == claimVaccineStatus);
+}

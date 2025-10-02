@@ -1,4 +1,4 @@
-import { groth16 } from "snarkjs";
+import { groth16, wtns } from "snarkjs";
 import { readFileSync } from "fs";
 import { fileURLToPath } from "url";
 import path from "path";
@@ -8,8 +8,6 @@ const __dirname = path.dirname(__filename);
 
 async function main() {
   try {
-    console.log("Starting ZK proof process...");
-
     const inputs = {
       age: 25,
       vaccineStatus: 1,

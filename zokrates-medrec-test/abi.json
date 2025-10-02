@@ -1,0 +1,30 @@
+{
+  "inputs": [
+    {
+      "name": "age",
+      "public": false,
+      "type": "field"
+    },
+    {
+      "name": "vaccineStatus",
+      "public": false,
+      "type": "field"
+    },
+    {
+      "name": "ageThreshold",
+      "public": true,
+      "type": "field"
+    },
+    {
+      "name": "claimVaccineStatus",
+      "public": true,
+      "type": "field"
+    }
+  ],
+  "output": {
+    "type": "tuple",
+    "components": {
+      "elements": []
+    }
+  }
+}
